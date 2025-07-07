@@ -1,8 +1,8 @@
 from selenium.webdriver.common.by import By
 
 class OrderPageLocators:
-    ORDER_BUTTON_TOP = (By.XPATH, "//button[text()='Заказать' and contains(@class, 'Button_Button')]")  # Кнопка заказать вверху
-    ORDER_BUTTON_BOTTOM = (By.XPATH, "(//button[contains(text(), 'Заказать')])[2]") # Кнопка заказать внизу
+    ORDER_BUTTON_TOP = (By.CLASS_NAME, "Button_Button__ra12g")  # Кнопка заказать вверху
+    ORDER_BUTTON_BOTTOM = (By.XPATH, "//button[contains(@class, 'Button_Button') and contains(text(), 'Заказать')]") # Кнопка заказать внизу
 
     FIRST_NAME = (By.XPATH, "//input[@placeholder='* Имя']") # Поле Имя
     LAST_NAME = (By.XPATH, "//input[@placeholder='* Фамилия']") # Поле Фамилия
@@ -13,7 +13,7 @@ class OrderPageLocators:
 
     PHONE = (By.XPATH, "//input[@placeholder='* Телефон: на него позвонит курьер']") # Поле Телефон
 
-    NEXT_BUTTON = (By.XPATH, "//button[text()='Далее']") # Кнопка Далее на втором шаге
+    NEXT_BUTTON = (By.XPATH, '//div[@class="Order_NextButton__1_rCA"]/button[text() = "Далее"]') # Кнопка Далее на втором шаге
 
     DATE_INPUT = (By.XPATH, "//input[@placeholder='* Когда привезти самокат']") # Поле Даты
     CALENDAR_DROPDOWN = (By.CLASS_NAME, "react-datepicker") # Выпадающий календарь

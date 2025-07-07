@@ -43,6 +43,10 @@ class BasePage:
     def switch_to_next_tab(self):
         self.driver.switch_to.window(self.driver.window_handles[1])
 
-    @allure.step("Ожидание пргрузки url")
-    def wait(self):
+    @allure.step("Ожидание прогрузки url")
+    def wait_url(self):
         WebDriverWait(self.driver, 20).until(EC.url_contains("dzen.ru"))
+
+    @allure.step("Получение url")
+    def get_current_url(self):
+        return self.driver.current_url

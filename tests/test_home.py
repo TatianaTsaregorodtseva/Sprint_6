@@ -3,8 +3,6 @@ import allure
 import pytest
 from data import Data
 from pages.home_page import HomePage
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 class TestLogo:
     @allure.title("Проверяем редирект по логотипу Самоката")
@@ -15,7 +13,7 @@ class TestLogo:
         home_page.click_order_button_top()
         home_page.click_scooter_logo()
         #Assert
-        assert driver.current_url == main_site
+        assert home_page.get_current_url == main_site
 
     @allure.title("Проверяем редирект по логотипу Яндекса")
     def test_logo_yandex(self, driver):
@@ -24,9 +22,9 @@ class TestLogo:
         #Act
         home_page.click_yandex_logo()
         home_page.switch_to_next_tab()
-        home_page.wait()
+        home_page.wait_url()
         #Assert
-        assert dzen in driver.current_url
+        assert dzen in home_page.get_current_url
 
 
 class TestQuestions:

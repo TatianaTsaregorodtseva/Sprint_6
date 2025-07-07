@@ -1,8 +1,8 @@
 from selenium.webdriver.common.by import By
 
 class HomePageLocators:
-    ORDER_BUTTON_TOP = (By.XPATH, "//button[text()='Заказать' and contains(@class, 'Button_Button')]") # Кнопка заказать вверху
-    ORDER_BUTTON_BOTTOM = (By.XPATH, "//button[text()='Заказать'][@class='Order_Button_Black']") # Кнопка заказать внизу
+    ORDER_BUTTON_TOP = (By.XPATH, '//div[@class="Header_Nav__AGCXC"]//button[text()= "Заказать"]') # Кнопка заказать вверху
+    ORDER_BUTTON_BOTTOM = (By.XPATH, '//div[@class="Home_FinishButton__1_cWm"]//button[text()= "Заказать"]') # Кнопка заказать внизу
     LOGO_SAMOKAT = (By.XPATH, "//img[@alt='Scooter']")  # Логотип Самоката
     LOGO_YANDEX = (By.XPATH, "//a[@class='Header_LogoYandex__3TSOI']") # Логотип Яндекса
 
